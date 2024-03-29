@@ -35,6 +35,7 @@ public class Bank {
                 System.out.print("Enter the amount to withdraw: ");
                 int withdrawAmount = Integer.parseInt(scan.nextLine());
                 account.withdraw(withdrawAmount);
+                System.out.println("The balance is now equal to: " + account.balance + "€");
             } else if (choice == 3) {
                 exit = true;
                 System.out.println("Exiting...");
