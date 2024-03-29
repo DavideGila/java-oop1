@@ -24,7 +24,7 @@ public class Bank {
             System.out.println("2. Withdraw money");
             System.out.println("3. Exit");
             System.out.print("Your choice: ");
-            int choice = scan.nextInt();
+            int choice = Integer.parseInt(scan.nextLine());
 
             if (choice == 1) {
                 System.out.print("Enter the amount to deposit: ");
@@ -45,7 +45,7 @@ public class Bank {
             }
         }
 
-        account.printAccountInfo();
+        System.out.println(account.printAccountInfo());
 
         scan.close();
     }

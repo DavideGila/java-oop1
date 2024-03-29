@@ -20,16 +20,17 @@ public class Conto {
         Random random = new Random();
         return random.nextInt(1000);
     }
-    public void deposit(int amount) {
+    public int deposit(int amount) {
         if (amount > 0) {
             balance += amount;
             System.out.println(amount + "€ successfully paid in");
         } else {
             System.out.println("The amount to be paid must be greater than zero");
         }
+        return balance;
     }
 
-    public void withdraw(int amount) {
+    public int withdraw(int amount) {
         if (amount > 0) {
             if (balance >= amount) {
                 balance -= amount;
@@ -40,12 +41,14 @@ public class Conto {
         } else {
             System.out.println("The amount to be withdrawn must be greater than zero");
         }
+        return balance;
     }
 
-    public void printAccountInfo() {
-        System.out.println("Account number: " + accountNumber);
-        System.out.println("Owner: " + ownerName);
-        System.out.println("Balance: " + balance + "€");
+    public String printAccountInfo() {
+        String accountInfo = "Account number: " + accountNumber + "\n";
+        accountInfo += "Owner: " + ownerName + "\n";
+        accountInfo += "Balance: " + balance + "€\n";
+        return accountInfo;
     }
 }
 
